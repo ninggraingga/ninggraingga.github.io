@@ -2,8 +2,8 @@
 name: "Ninggra Ingga"
 title: "Ninggra Ingga"
 description: "Discover the world's Hidden Vacation Gems"
-logo: 'assets/images/logo.png'
-favicon: 'assets/images/logo.png'
+logo: '/favicon.ico'
+favicon: '/favicon.ico'
 baseurl: /
 google_analytics: 'UA-46278016-1'
 disqus: 'demowebsite'
