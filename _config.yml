@@ -16,10 +16,9 @@ authors:
   admin:
     name: Admin
     display_name: Admin
-    gravatar: e56154546cf4be74e393c62d1ae9f9d4
-    email: wowthemesnet@gmail.com
+    gravatar: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh2mc5gN0ijT7cf30O08auQ1ddH7hXpj0_U7zm3yriuNm72Xl7uxiicjmrHoK2Nn-AvaLKDaZ2KYfMo8_Qd7IDoBE8ut3JGbS21-5cblmhkDF3Vv88MaBg9qKYI_Oijo-IpX8kQhiRNxlL2iOVV2mRXRn-w6lI8rUoUakrm1SS0X2B4It2ilGFik8VJQ7wh/s1600/20240922_200528.png
+    email: ninggraingga@gmail.com
     web: /aboutme
-    twitter: https://twitter.com/wowthemesnet
     description: "Author of Mediumish, a Bootstrap Medium styled template available for WordPress, HTML, Ghost and Jekyll. You are currently previewing Jekyll template demo."
   john:
     name: John
