@@ -346,18 +346,7 @@
 
 
 
-<div aria-label="breadcrumb"  class="breadcrumb">
-    TAGS&nbsp
-    
-    {% if page.categories %}
-      {% for category in page.categories %}
-        
-          <a href="{{ site.url }}/categories/{{ category | downcase | replace: ' ', '-' }}">#{{ category }}</a>
-        &nbsp
-      {% endfor %}
-    {% endif %}
-</div>	    
-		    <br /><br />
+
 
 
 <script type="application/ld+json">
