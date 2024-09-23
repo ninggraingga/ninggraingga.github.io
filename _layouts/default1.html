@@ -298,7 +298,61 @@
 </head>
 <body>
 
-	
+	    <div class="site-content">
+
+<div class="container">
+            <div class="main-content">
+     
+<div aria-label="breadcrumb"  class="breadcrumb">
+    <a href="{{ site.url }}/">Home</a>&nbsp》
+    
+    {% if page.categories %}
+      {% for category in page.categories %}
+        
+          <a href="{{ site.url }}/categories/{{ category | downcase | replace: ' ', '-' }}">{{ category }}</a>
+        &nbsp》
+      {% endfor %}
+    {% endif %}
+    
+    <b class="active">{{ page.title }}</b>
+</div>	    
+		    
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ page.title | escape }}",
+  "image": "{{ page.image }}", 
+  "description": "{{ page.content | strip_html | truncatewords: 30 | escape }}",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",
+    "reviewCount": "2655"
+  }
+}
+</script>		    
+		    
+		    
+   {{ content }}
+
+
+
+
+<center><script type="text/javascript">
+	atOptions = {
+		'key' : 'b4d0c6713956b51808babd18c1c7fe83',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//evendisciplineseedlings.com/b4d0c6713956b51808babd18c1c7fe83/invoke.js"></script></center>
+		    
+ </div>     </div>
+        </div>
 
 
 <div class="floating-header">
@@ -415,61 +469,21 @@
 <center>
 <br /><br /><br />{% include search-lunr.html %}
 </center>
-            <div class="site-content">
-
-<div class="container">
-            <div class="main-content">
-     
-<div aria-label="breadcrumb"  class="breadcrumb">
-    <a href="{{ site.url }}/">Home</a>&nbsp》
-    
-    {% if page.categories %}
-      {% for category in page.categories %}
         
-          <a href="{{ site.url }}/categories/{{ category | downcase | replace: ' ', '-' }}">{{ category }}</a>
-        &nbsp》
-      {% endfor %}
-    {% endif %}
-    
-    <b class="active">{{ page.title }}</b>
-</div>	    
-		    
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "{{ page.title | escape }}",
-  "image": "{{ page.image }}", 
-  "description": "{{ page.content | strip_html | truncatewords: 30 | escape }}",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.5",
-    "reviewCount": "2655"
-  }
-}
-</script>		    
-		    
-		    
-   {{ content }}
-
-
-
-
-<center><script type="text/javascript">
-	atOptions = {
-		'key' : 'b4d0c6713956b51808babd18c1c7fe83',
-		'format' : 'iframe',
-		'height' : 250,
-		'width' : 300,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//evendisciplineseedlings.com/b4d0c6713956b51808babd18c1c7fe83/invoke.js"></script></center>
-		    
- </div>     </div>
-        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         </div>
         
      
@@ -899,3 +913,5 @@
 	
 </body>
 </html>
+
+
