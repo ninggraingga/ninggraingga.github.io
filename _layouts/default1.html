@@ -347,13 +347,13 @@
 
 
 <div aria-label="breadcrumb"  class="breadcrumb">
-    <a href="{{ site.url }}/">Home</a>&nbsp》
+    TAGS&nbsp
     
     {% if page.categories %}
       {% for category in page.categories %}
         
-          <a href="{{ site.url }}/categories/{{ category | downcase | replace: ' ', '-' }}">{{ category }}</a>
-        &nbsp》
+          <a href="{{ site.url }}/categories/{{ category | downcase | replace: ' ', '-' }}">#{{ category }}</a>
+        &nbsp
       {% endfor %}
     {% endif %}
 </div>	    
