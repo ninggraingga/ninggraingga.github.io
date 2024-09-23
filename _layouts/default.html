@@ -21,7 +21,18 @@
 	
 {% seo %}
   
-  
+  <style>
+.featured-image, .img-fluid, .card-img-top {
+  width: 100%;
+  height: auto; /* Menjaga proporsi gambar */
+  max-width: 100%; /* Membatasi lebar maksimum gambar */
+  display: block; /* Menghindari jarak kosong di bawah gambar */
+  object-fit: cover; /* Memastikan gambar proporsional tanpa distorsi */
+  border-top-left-radius: calc(.25rem - 1px);
+  border-top-right-radius: calc(.25rem - 1px);
+}
+</style>
+
 	
   <link reltitle="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
