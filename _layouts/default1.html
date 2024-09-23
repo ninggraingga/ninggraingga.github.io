@@ -326,7 +326,7 @@
     
     <b class="active">{{ page.title }}</b>
 </div>	    
-		    
+		    <br /><br />
 
 
 <script type="application/ld+json">
@@ -373,6 +373,9 @@
 <p class="lead">
         {{ site.description }}
     </p>	
+    <center>
+{% include search-lunr.html %}
+</center>
   <ul>
     <li>
       <a href="#" onclick="toggleMenu(this)">Asia</a>
@@ -468,9 +471,7 @@
 	</noscript>
 
 	    
-<center>
-<br /><br /><br />{% include search-lunr.html %}
-</center>
+
         
         
         
@@ -914,4 +915,3 @@
 	
 </body>
 </html>
-
