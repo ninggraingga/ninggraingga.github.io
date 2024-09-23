@@ -54,18 +54,17 @@ post_class: post-template
 
 <div aria-label="breadcrumb">
   <ul class="breadcrumb">
-    <li><a href="{{ site.url }}/">Home</a></li>&nbsp》
+    Tags :&nbsp
     
     {% if page.categories %}
       {% for category in page.categories %}
-        <li>
-          <a href="{{ site.url }}/categories/{{ category | downcase | replace: ' ', '-' }}">{{ category }}</a>
-        </li>&nbsp》
+        
+          <a href="{{ site.url }}/categories/{{ category | downcase | replace: ' ', '-' }}">#{{ category }}</a>
+        &nbsp
       {% endfor %}
     {% endif %}
     
-    <li class="active">{{ page.title }}</li>
-  </ul>
+    
 </div>	   
 
 
