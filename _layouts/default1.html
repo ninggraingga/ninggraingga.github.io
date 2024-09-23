@@ -27,12 +27,14 @@
 
 
 <style>
-.featured-image {
+.featured-image, .card-img-top {
   width: 100%;
-  height: auto; /* Menyesuaikan tinggi gambar secara proporsional */
-  max-width: 100%; /* Membatasi lebar maksimum agar tidak melebihi elemen induk */
-  display: block; /* Menghilangkan jarak kosong di bawah gambar */
-  object-fit: cover; /* Memastikan gambar tetap proporsional */
+  height: auto; /* Menjaga proporsi gambar */
+  max-width: 100%; /* Membatasi lebar maksimum gambar */
+  display: block; /* Menghindari jarak kosong di bawah gambar */
+  object-fit: cover; /* Memastikan gambar proporsional tanpa distorsi */
+  border-top-left-radius: calc(.25rem - 1px);
+  border-top-right-radius: calc(.25rem - 1px);
 }
 </style>
 
