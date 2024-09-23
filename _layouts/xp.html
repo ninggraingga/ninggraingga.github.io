@@ -51,6 +51,24 @@ post_class: post-template
                 {{content}}
             </div>
 
+
+<div aria-label="breadcrumb">
+  <ul class="breadcrumb">
+    <li><a href="{{ site.url }}/">Home</a></li>&nbsp》
+    
+    {% if page.categories %}
+      {% for category in page.categories %}
+        <li>
+          <a href="{{ site.url }}/categories/{{ category | downcase | replace: ' ', '-' }}">{{ category }}</a>
+        </li>&nbsp》
+      {% endfor %}
+    {% endif %}
+    
+    <li class="active">{{ page.title }}</li>
+  </ul>
+</div>	   
+
+
             <!-- Rating -->
             {% if page.rating %}
             <div class="rating mb-4 d-flex align-items-center">
@@ -93,18 +111,7 @@ Writer :
                 </span>
                 {% endif %}
 
-            <!-- Post Categories -->
-            <div class="after-post-cats">
-                <ul class="tags mb-4">
-                    {% assign sortedCategories = page.categories | sort %}
-                    {% for category in sortedCategories %}
-                    <li>
-                        <a class="smoothscroll" href="{{site.baseurl}}/categories#{{ category | replace: " ","-" }}">{{ category }}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <!-- End Categories -->
+            
 
        <!-- Post Share -->
         <div class="col-md-2 pl-0">
