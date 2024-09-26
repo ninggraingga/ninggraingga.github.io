@@ -125,12 +125,14 @@ post_class: post-template
          {% if page.previous.image %}
             <img src="{{ page.previous.image }}" alt="{{ page.previous.title }}" id="post-image-{{ post.id }}" class="post-image">
           {% endif %}  <br />
-            &laquo; {{page.previous.title}}</a>
+            {{page.previous.title}}</a>
             {% endif %}
          <hr />   {% if page.next.url %}
-          Next Article  <a class="next d-block col-md-6 text-lg-right" href="{{ site.baseurl }}{{page.next.url}}">{{page.next.title}} &raquo; </a>{% if page.next.image %}
+          Next Article  <a class="next d-block col-md-6 text-lg-right" href="{{ site.baseurl }}{{page.next.url}}">
+           {% if page.next.image %}
             <img src="{{ page.next.image }}" alt="{{ page.next.title }}" id="post-image-{{ post.id }}" class="post-image">
-          {% endif %}  <br />
+          {% endif %}  <br />   {{page.next.title}} </a>
+             
             {% endif %}
             <div class="clearfix"></div>
             </div>
