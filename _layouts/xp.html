@@ -59,7 +59,7 @@ post_class: post-template
     {% if page.categories %}
       {% for category in page.categories %}
         
-          <div class="spa" ><a href="{{ site.url }}/categories/{{ category | downcase | replace: ' ', '-' }}">{{ category }}</a></div>
+          <a href="{{ site.url }}/categories/{{ category | downcase | replace: ' ', '-' }}">{{ category }}</a>
         &nbsp
       {% endfor %}
     {% endif %}
