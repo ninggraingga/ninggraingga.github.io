@@ -3,31 +3,35 @@ name: Sync Posts to antopangesto.github.io
 on:
   push:
     branches:
-      - main
-    paths:
-      - '_posts/'
+      - master
 
 jobs:
   sync:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout ninggraingga.github.io
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 1
 
-      - name: Clone antopangesto.github.io repository
-        run: |
-          git clone https://github.com/antopangesto/antopangesto.github.io.git
+    - name: Setup Git
+      run: |
+        git config --global user.name 'ninggraingga'
+        git config --global user.email 'ninggraingga@gmail.com'
 
-      - name: Copy posts to antopangesto.github.io
-        run: |
-          rsync -av --delete _posts/ antopangesto.github.io/_posts/
+    - name: Clone destination repository
+      run: |
+        git clone https://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@github.com/antopangesto/antopangesto.github.io.git
+        cd antopangesto.github.io
+        git checkout master
 
-      - name: Commit and Push Changes
-        run: |
-          cd antopangesto.github.io
-          git config user.name "GitHub Action"
-          git config user.email "actions@github.com"
-          git add _posts
-          git commit -m "Sync posts from ninggraingga.github.io" || echo "No changes to commit"
-          git push https://ninggraingga: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@github.com/antopangesto/antopangesto.github.io.git main
+    - name: Copy posts
+      run: |
+        cp -R ../ninggraingga.github.io/_posts/* ./_posts/
+        cd antopangesto.github.io
+
+    - name: Commit and Push changes
+      run: |
+        git add .
+        git commit -m "Sync posts from ninggraingga.github.io"
+        git push https://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@github.com/antopangesto/antopangesto.github.io.git master
