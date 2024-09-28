@@ -1,0 +1,30 @@
+name: Sync Posts to antopangesto.github.io
+
+on:
+  push:
+    paths:
+      - '_posts/**'   # Trigger hanya jika ada perubahan di _posts
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout ninggraingga.github.io repo
+        uses: actions/checkout@v2
+
+      - name: Copy posts to antopangesto.github.io
+        run: |
+          git clone https://github.com/antopangesto/antopangesto.github.io.git
+          rsync -av --delete _posts/ antopangesto.github.io/_posts/
+
+      - name: Commit and Push Changes
+        run: |
+          cd antopangesto.github.io
+          git config user.name "GitHub Action"
+          git config user.email "actions@github.com"
+          git add _posts
+          git commit -m "Sync posts from ninggraingga.github.io"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
