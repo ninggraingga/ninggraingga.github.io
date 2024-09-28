@@ -27,7 +27,7 @@ jobs:
 
     - name: Copy posts
       run: |
-        cp -R ../ninggraingga.github.io/_posts/* ./_posts/
+        cp -R ../antopangesto.github.io/_posts/* ./_posts/
         cd antopangesto.github.io
 
     - name: Commit and Push changes
