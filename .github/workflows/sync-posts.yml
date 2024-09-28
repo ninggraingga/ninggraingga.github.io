@@ -21,13 +21,13 @@ jobs:
 
     - name: Clone destination repository
       run: |
-        git clone https://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@github.com/antopangesto/antopangesto.github.io.git
+        git clone https://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@github.com/antopangesto/antopangesto.github.io/_posts/
         cd antopangesto.github.io
         git checkout master
 
     - name: Copy posts
       run: |
-        cp -R ../ninggraingga.github.io/_posts/* .antopangesto.github.io/_posts/
+        cp -R ../ninggraingga.github.io/_posts/* ./_posts/
         cd antopangesto.github.io
 
     - name: Commit and Push changes
