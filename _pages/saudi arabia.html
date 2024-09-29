@@ -5,21 +5,101 @@ permalink: /saudi-arabia
 ---
 
 
-<div class="col-12 mb-4">
-        
-        <div class="row">
-          {% for post in site.categories.saudi-arabia limit: 999 %}
-          <div class="col-md-4 col-sm-6 animate__animated animate__fadeIn">
-            <div class="card">
-           <a href="{{ post.url }}">   <img src="{{ post.image }}" class="card-img-top" alt="{{ post.title }}">
-           </a>
-              <div class="card-body">
-                <h5 class="card-title" style="max-width:100%;">{{ post.title }}</h5>
-                <a href="{{ post.url }}" class="btn btn-primary">Read More
-                        </a>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
+
+
+
+
+    <style>
+        /* Container grid */
+        #iska-geulis-grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 kolom di layar besar */
+            grid-gap: 10px; /* Jarak antar elemen */
+            padding: 10px;
+            background-color: #ff5000;
+            border-radius: 10px;
+        }
+
+        /* Item grid */
+        .iska-geulis-grid-item {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Gambar */
+        .iska-geulis-grid-item img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Judul */
+        .iska-geulis-title {
+            font-size: 1.2em;
+            color: #ff5000;
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Link Deskripsi */
+        .iska-geulis-description {
+            font-size: 0.9em;
+            color: #ff5000;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .iska-geulis-description:hover {
+            color: #ff3000;
+        }
+
+        /* Menghilangkan underline pada semua link */
+        a {
+            text-decoration: none;
+        }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            #iska-geulis-grid-container {
+                grid-template-columns: 1fr; /* 1 kolom di layar kecil */
+            }
+            
+            .iska-geulis-grid-item img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .iska-geulis-title {
+                font-size: 1em;
+            }
+
+            .iska-geulis-description {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+
+
+<div id="iska-geulis-grid-container">
+    {% for post in site.categories.united-arab-emirates limit: 4 %}
+    <div class="iska-geulis-grid-item">
+        <a href="{{ post.url }}">
+            <img src="{{ post.image }}" alt="{{ post.title }}">
+        </a>
+        <h5 class="iska-geulis-title">{{ post.title }}</h5>
+        <a href="{{ post.url }}" class="iska-geulis-description">Read More</a>
+    </div>
+    {% endfor %}
+</div>
+
+
+
