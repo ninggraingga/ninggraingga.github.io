@@ -85,9 +85,12 @@ permalink: /united-arab-emirates
         }
     </style>
 
+<b id="iska-cantik-title">
+    United Arab Emirates
+</b>
 <div id="iska-cantik-slider-container">
     <div id="iska-cantik-slider">
-        {% for post in site.categories.united-arab-emirates limit: 999 %}
+        {% for post in site.categories.united-arab-emirates limit: 4 %}
         <div id="iska-cantik-slide">
            <a href="{{ post.url }}">
                <img src="{{ post.image }}" alt="{{ post.title }}">
@@ -99,6 +102,10 @@ permalink: /united-arab-emirates
     </div>
     <button id="iska-cantik-prev" onclick="prevIskaCantikSlide()">&#10094;</button>
     <button id="iska-cantik-next" onclick="nextIskaCantikSlide()">&#10095;</button>
+
+  <a href="/united-arab-emirates"><b id="iska-cantik-title">
+    More Post
+</b></a>
 </div>
 
 <script>
