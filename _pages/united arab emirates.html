@@ -5,21 +5,55 @@ permalink: /united-arab-emirates
 ---
 
 
-<div class="col-12 mb-4">
-        
-        <div class="row">
-          {% for post in site.categories.united-arab-emirates limit: 999 %}
-          <div class="col-md-4 col-sm-6 animate__animated animate__fadeIn">
-            <div class="card">
-           <a href="{{ post.url }}">   <img src="{{ post.image }}" class="card-img-top" alt="{{ post.title }}">
+
+
+
+    <style>
+        #iska-cantik-slider-container {
+            position: relative; width: 100%; max-width: 800px; margin: auto; overflow: hidden;
+            padding: 20px; background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 80, 0, 0.3)), #ff5000;
+            border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        #iska-cantik-slider { display: flex; transition: transform 0.5s ease-in-out; }
+        #iska-cantik-slide { min-width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        #iska-cantik-slide img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6); margin-bottom: 10px; }
+        #iska-cantik-title { font-size: 1.2em; background-color: white; color: #ff5000; padding: 5px; border-radius: 5px; margin-bottom: 5px; }
+        #iska-cantik-description { padding: 0 10px; font-size: 0.9em; color: white; }
+        #iska-cantik-prev, #iska-cantik-next { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(255, 255, 255, 0.8); color: #ff5000; border: none; padding: 10px; cursor: pointer; border-radius: 50%; z-index: 10; }
+        #iska-cantik-prev:hover, #iska-cantik-next:hover { background-color: rgba(255, 255, 255, 0.9); }
+        #iska-cantik-prev { left: 10px; } #iska-cantik-next { right: 10px; }
+        a { text-decoration: none; }
+        @media (max-width: 768px) { #iska-cantik-slide img { width: 100px; height: 100px; } #iska-cantik-title { font-size: 1em; } #iska-cantik-description { font-size: 0.8em; } }
+    </style>
+
+<div id="iska-cantik-slider-container">
+    <div id="iska-cantik-slider">
+        {% for post in site.categories.united-arab-emirates limit: 999 %}
+        <div id="iska-cantik-slide">
+           <a href="{{ post.url }}">
+               <img src="{{ post.image }}" alt="{{ post.title }}">
            </a>
-              <div class="card-body">
-                <h5 class="card-title" style="max-width:100%;">{{ post.title }}</h5>
-                <a href="{{ post.url }}" class="btn btn-primary">Read More
-                        </a>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
+           <h5 id="iska-cantik-title">{{ post.title }}</h5>
+           <a href="{{ post.url }}" class="iska-cantik-btn btn-primary" id="iska-cantik-description">Read More</a>
         </div>
-      </div>
+        {% endfor %}
+    </div>
+    <button id="iska-cantik-prev" onclick="prevIskaCantikSlide()">&#10094;</button>
+    <button id="iska-cantik-next" onclick="nextIskaCantikSlide()">&#10095;</button>
+</div>
+
+<script>
+    let iskaCantikSlideIndex = 0;
+    const iskaCantikSlides = document.querySelectorAll('#iska-cantik-slide');
+    function updateIskaCantikSlides() {
+        document.getElementById('iska-cantik-slider').style.transform = `translateX(${-iskaCantikSlideIndex * 100}%)`;
+    }
+    function nextIskaCantikSlide() {
+        iskaCantikSlideIndex = (iskaCantikSlideIndex + 1) % iskaCantikSlides.length; updateIskaCantikSlides();
+    }
+    function prevIskaCantikSlide() {
+        iskaCantikSlideIndex = (iskaCantikSlideIndex - 1 + iskaCantikSlides.length) % iskaCantikSlides.length; updateIskaCantikSlides();
+    }
+</script>
+
+
