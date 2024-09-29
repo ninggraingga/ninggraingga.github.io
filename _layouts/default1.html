@@ -469,7 +469,93 @@ tr:nth-child(even) td {
   </style>
 
 	
-	
+	<style>
+        /* Grid container */
+        #iska-geulis-grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 10px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 80, 0, 0.3)), #ff5000;
+            border-radius: 10px;
+        }
+
+        /* Individual grid item */
+        .iska-geulis-grid-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Image styling */
+        .iska-geulis-grid-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-bottom: 8px;
+            box-shadow: 0 2px 6px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Title styling */
+        .iska-geulis-title {
+            font-size: 1.1em;
+            color: #ff5000;
+            padding: 4px;
+            background-color: white;
+            margin-bottom: 5px;
+            border-radius: 3px;
+        }
+
+        /* Description link styling */
+        .iska-geulis-description {
+            font-size: 0.85em;
+            color: #ff5000;
+            text-decoration: none;
+        }
+
+        .iska-geulis-description:hover {
+            color: #ff3000;
+        }
+
+        /* Removing underline from all links */
+        a {
+            text-decoration: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            /* Reduce image size on smaller screens */
+            .iska-geulis-grid-item img {
+                width: 100%;
+                height: auto;
+            }
+
+            /* Adjust title font size */
+            .iska-geulis-title {
+                font-size: 1em;
+            }
+
+            /* Adjust description font size */
+            .iska-geulis-description {
+                font-size: 0.75em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Stack items vertically on very small screens */
+            #iska-geulis-grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+
 
     <style>
         #iska-cantik-slider-container {
