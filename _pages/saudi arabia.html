@@ -10,15 +10,13 @@ permalink: /saudi-arabia
 
 
     
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jekyll Table Grid</title>
+
+                
+
+
     <style>
         /* Table container */
-        #iska-geulis-table-container {
+        #iska2-table-container {
             width: 100%;
             padding: 10px;
             background-color: #ff5000;
@@ -39,7 +37,7 @@ permalink: /saudi-arabia
         }
 
         /* Table item styling */
-        .iska-geulis-table-item {
+        .iska2-table-item {
             background: white;
             padding: 10px;
             border-radius: 10px;
@@ -47,7 +45,7 @@ permalink: /saudi-arabia
         }
 
         /* Image styling */
-        .iska-geulis-table-item img {
+        .iska2-table-item img {
             width: 100px;
             height: 100px;
             border-radius: 50%;
@@ -56,7 +54,7 @@ permalink: /saudi-arabia
         }
 
         /* Title styling */
-        .iska-geulis-title {
+        .iska2-title {
             font-size: 1.2em;
             color: #ff5000;
             background-color: white;
@@ -66,13 +64,13 @@ permalink: /saudi-arabia
         }
 
         /* Description link */
-        .iska-geulis-description {
+        .iska2-description {
             font-size: 0.9em;
             color: #ff5000;
             text-decoration: none;
         }
 
-        .iska-geulis-description:hover {
+        .iska2-description:hover {
             color: #ff3000;
         }
 
@@ -87,48 +85,42 @@ permalink: /saudi-arabia
                 margin-bottom: 10px;
             }
 
-            .iska-geulis-table-item img {
+            .iska2-table-item img {
                 width: 80px;
                 height: 80px;
             }
 
-            .iska-geulis-title {
+            .iska2-title {
                 font-size: 1em;
             }
 
-            .iska-geulis-description {
+            .iska2-description {
                 font-size: 0.8em;
             }
         }
     </style>
-</head>
-<body>
 
-<div id="iska-geulis-table-container">
+
+<div id="iska2-table-container">
     <table>
+        {% assign counter = 0 %}
         <tr>
-            {% for post in site.categories.saudi-arabia limit: 4 %}
+        {% for post in site.categories.united-arab-emirates limit: 4 %}
             <td>
-                <div class="iska-geulis-table-item">
+                <div class="iska2-table-item">
                     <a href="{{ post.url }}">
                         <img src="{{ post.image }}" alt="{{ post.title }}">
                     </a>
-                    <h5 class="iska-geulis-title">{{ post.title }}</h5>
-                    <a href="{{ post.url }}" class="iska-geulis-description">Read More</a>
+                    <h5 class="iska2-title">{{ post.title }}</h5>
+                    <a href="{{ post.url }}" class="iska2-description">Read More</a>
                 </div>
             </td>
-            {% if forloop.index0 % 2 == 1 %}
-        </tr><tr>
+            {% assign counter = counter | plus: 1 %}
+            {% if counter % 2 == 0 %}
+                </tr><tr>
             {% endif %}
-            {% endfor %}
+        {% endfor %}
         </tr>
     </table>
 </div>
-
-</body>
-</html>
-
-
-
-
 
