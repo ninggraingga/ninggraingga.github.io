@@ -225,7 +225,84 @@ tr:nth-child(even) td {
 
 			
 	
+<style>
+        /* Container for the grid */
+        #iska2-grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2px;
+            background-color: #ff5000;
+            border-radius: 3px;
+        }
 
+        /* Individual grid item styling */
+        .iska2-grid-item {
+            flex: 0 0 calc(50% - 20px); /* Two items per row with space */
+            margin: 10px;
+            background: white;
+            padding: 3px;
+            border-radius: 3px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        /* Image styling */
+        .iska2-grid-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 3px;
+            object-fit: cover;
+            margin-bottom: 2px;
+        }
+
+        /* Title styling */
+        .iska2-title {
+            font-size: 1em;
+            color: #ff5000;
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Description link */
+        .iska2-description {
+            font-size: 0.9em;
+            color: #ff5000;
+            text-decoration: none;
+        }
+
+        .iska2-description:hover {
+            color: #ff3000;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 100%) {
+            .iska2-grid-item {
+                flex: 0 0 calc(100% - 20px); /* One item per row */
+            }
+
+            .iska2-grid-item img {
+                width: 100%;
+                height: auto;
+            }
+
+            .iska2-title {
+                font-size: 1em;
+            }
+
+            .iska2-description {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+
+
+
+
+    
 
 
 
