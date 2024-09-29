@@ -17,6 +17,52 @@ title: Home
 
     <div class="section-title">
 
+
+
+
+<!-- slide 1 😍😍😍 -->
+<div id="iska-cantik-slider-container">
+  <b id="iska-cantik-title">
+    United Arab Emirates
+</b>
+    <div id="iska-cantik-slider">
+        {% for post in site.categories.united-arab-emirates limit: 4 %}
+        <div id="iska-cantik-slide">
+           <a href="{{ post.url }}">
+               <img src="{{ post.image }}" alt="{{ post.title }}">
+           </a>
+           <h5 id="iska-cantik-title">{{ post.title }}</h5>
+           <a href="{{ post.url }}" class="iska-cantik-btn btn-primary" id="iska-cantik-description">Read More</a>
+        </div>
+        {% endfor %}
+    </div>
+    <button id="iska-cantik-prev" onclick="prevIskaCantikSlide()">&#10094;</button>
+    <button id="iska-cantik-next" onclick="nextIskaCantikSlide()">&#10095;</button>
+
+  <a href="/united-arab-emirates" id="iska-cantik-title">
+    More Post
+</a>
+</div>
+
+<script>
+    let iskaCantikSlideIndex = 0;
+    const iskaCantikSlides = document.querySelectorAll('#iska-cantik-slide');
+    function updateIskaCantikSlides() {
+        document.getElementById('iska-cantik-slider').style.transform = `translateX(${-iskaCantikSlideIndex * 100}%)`;
+    }
+    function nextIskaCantikSlide() {
+        iskaCantikSlideIndex = (iskaCantikSlideIndex + 1) % iskaCantikSlides.length; updateIskaCantikSlides();
+    }
+    function prevIskaCantikSlide() {
+        iskaCantikSlideIndex = (iskaCantikSlideIndex - 1 + iskaCantikSlides.length) % iskaCantikSlides.length; updateIskaCantikSlides();
+    }
+</script>
+<!-- slide 1 😍😍😍 -->
+
+        
+        
+
+        <br />
         <b><span>Latest Posts</span></b>
 
     </div>
