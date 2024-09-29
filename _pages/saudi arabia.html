@@ -9,37 +9,53 @@ permalink: /saudi-arabia
 
 
 
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jekyll Table Grid</title>
     <style>
-        /* Container grid */
-        #iska-geulis-grid-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 kolom di layar besar */
-            grid-gap: 10px; /* Jarak antar elemen */
+        /* Table container */
+        #iska-geulis-table-container {
+            width: 100%;
             padding: 10px;
             background-color: #ff5000;
             border-radius: 10px;
+            box-sizing: border-box;
         }
 
-        /* Item grid */
-        .iska-geulis-grid-item {
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        /* Table cells */
+        td {
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Table item styling */
+        .iska-geulis-table-item {
             background: white;
             padding: 10px;
             border-radius: 10px;
-            text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        /* Gambar */
-        .iska-geulis-grid-item img {
+        /* Image styling */
+        .iska-geulis-table-item img {
             width: 100px;
             height: 100px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        /* Judul */
+        /* Title styling */
         .iska-geulis-title {
             font-size: 1.2em;
             color: #ff5000;
@@ -49,31 +65,29 @@ permalink: /saudi-arabia
             margin-bottom: 10px;
         }
 
-        /* Link Deskripsi */
+        /* Description link */
         .iska-geulis-description {
             font-size: 0.9em;
             color: #ff5000;
             text-decoration: none;
-            display: inline-block;
-            margin-top: 5px;
         }
 
         .iska-geulis-description:hover {
             color: #ff3000;
         }
 
-        /* Menghilangkan underline pada semua link */
-        a {
-            text-decoration: none;
-        }
-
-        /* Responsif */
+        /* Responsiveness */
         @media (max-width: 768px) {
-            #iska-geulis-grid-container {
-                grid-template-columns: 1fr; /* 1 kolom di layar kecil */
+            table, td {
+                display: block;
+                width: 100%;
             }
-            
-            .iska-geulis-grid-item img {
+
+            td {
+                margin-bottom: 10px;
+            }
+
+            .iska-geulis-table-item img {
                 width: 80px;
                 height: 80px;
             }
@@ -87,19 +101,34 @@ permalink: /saudi-arabia
             }
         }
     </style>
+</head>
+<body>
 
-
-<div id="iska-geulis-grid-container">
-    {% for post in site.categories.saudi-arabia limit: 4 %}
-    <div class="iska-geulis-grid-item">
-        <a href="{{ post.url }}">
-            <img src="{{ post.image }}" alt="{{ post.title }}">
-        </a>
-        <h5 class="iska-geulis-title">{{ post.title }}</h5>
-        <a href="{{ post.url }}" class="iska-geulis-description">Read More</a>
-    </div>
-    {% endfor %}
+<div id="iska-geulis-table-container">
+    <table>
+        <tr>
+            {% for post in site.categories.saudi-arabia limit: 4 %}
+            <td>
+                <div class="iska-geulis-table-item">
+                    <a href="{{ post.url }}">
+                        <img src="{{ post.image }}" alt="{{ post.title }}">
+                    </a>
+                    <h5 class="iska-geulis-title">{{ post.title }}</h5>
+                    <a href="{{ post.url }}" class="iska-geulis-description">Read More</a>
+                </div>
+            </td>
+            {% if forloop.index0 % 2 == 1 %}
+        </tr><tr>
+            {% endif %}
+            {% endfor %}
+        </tr>
+    </table>
 </div>
+
+</body>
+</html>
+
+
 
 
 
