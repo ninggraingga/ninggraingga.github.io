@@ -60,6 +60,24 @@ title: Home
 <!-- slide 1 😍😍😍 -->
 
         
+      <!-- slide2 🎾🎾🎾🎾🎾 -->
+        <div id="iska2-grid-container">
+b class="iska2-title">Saudi Arabia</b>
+    {% for post in site.categories.saudi-arabia limit: 4 %}
+    <div class="iska2-grid-item">
+        <a href="{{ post.url }}">
+            <img src="{{ post.image }}" alt="{{ post.title }}">
+        </a>
+     <a href="{{ post.url }}" class="iska2-title">   <h5>{{ post.title }}</h5>
+    </a>
+    </div>
+    {% endfor %}
+    <b class="iska2-title">More Posts</b>
+</div>
+      <!-- slide2 🎾🎾🎾🎾🎾 -->
+
+
+
         
 
         <br />
