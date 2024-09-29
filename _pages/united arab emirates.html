@@ -33,9 +33,9 @@ permalink: /united-arab-emirates
             text-align: center; 
         }
         #iska-cantik-slide img { 
-            width: 120px; 
-            height: 120px; 
-            border-radius: 5%; 
+            width: 100%; 
+            height: auto; 
+            border-radius: 10%; 
             object-fit: cover; 
             box-shadow: 0 2px 6px rgba(255, 255, 255, 0.5); 
             margin-bottom: 8px; 
@@ -85,10 +85,11 @@ permalink: /united-arab-emirates
         }
     </style>
 
-<b id="iska-cantik-title">
+
+<div id="iska-cantik-slider-container">
+  <b id="iska-cantik-title">
     United Arab Emirates
 </b>
-<div id="iska-cantik-slider-container">
     <div id="iska-cantik-slider">
         {% for post in site.categories.united-arab-emirates limit: 4 %}
         <div id="iska-cantik-slide">
@@ -103,9 +104,9 @@ permalink: /united-arab-emirates
     <button id="iska-cantik-prev" onclick="prevIskaCantikSlide()">&#10094;</button>
     <button id="iska-cantik-next" onclick="nextIskaCantikSlide()">&#10095;</button>
 
-  <a href="/united-arab-emirates"><b id="iska-cantik-title">
+  <a href="/united-arab-emirates" id="iska-cantik-title">
     More Post
-</b></a>
+</a>
 </div>
 
 <script>
