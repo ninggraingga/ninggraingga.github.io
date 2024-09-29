@@ -23,7 +23,7 @@ permalink: /saudi-arabia
 
         /* Individual grid item styling */
         .iska2-grid-item {
-            flex: 0 0 calc(50% - 5px); /* Two items per row with space */
+            flex: 0 0 calc(50% - 20px); /* Two items per row with space */
             margin: 10px;
             background: white;
             padding: 3px;
@@ -85,7 +85,7 @@ permalink: /saudi-arabia
     </style>
 
 <div id="iska2-grid-container">
-    {% for post in site.categories.united-arab-emirates limit: 4 %}
+    {% for post in site.categories.saudi-arabia limit: 4 %}
     <div class="iska2-grid-item">
         <a href="{{ post.url }}">
             <img src="{{ post.image }}" alt="{{ post.title }}">
