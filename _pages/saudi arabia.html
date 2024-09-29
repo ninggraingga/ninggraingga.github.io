@@ -10,42 +10,31 @@ permalink: /saudi-arabia
 
 
     
-
-                
-
-
     <style>
-        /* Table container */
-        #iska2-table-container {
-            width: 100%;
+        /* Container for the grid */
+        #iska2-grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             padding: 10px;
             background-color: #ff5000;
             border-radius: 10px;
-            box-sizing: border-box;
         }
 
-        /* Table styling */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        /* Table cells */
-        td {
-            text-align: center;
-            padding: 10px;
-        }
-
-        /* Table item styling */
-        .iska2-table-item {
+        /* Individual grid item styling */
+        .iska2-grid-item {
+            flex: 0 0 calc(50% - 20px); /* Two items per row with space */
+            margin: 10px;
             background: white;
             padding: 10px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            box-sizing: border-box;
         }
 
         /* Image styling */
-        .iska2-table-item img {
+        .iska2-grid-item img {
             width: 100px;
             height: 100px;
             border-radius: 50%;
@@ -74,18 +63,13 @@ permalink: /saudi-arabia
             color: #ff3000;
         }
 
-        /* Responsiveness */
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            table, td {
-                display: block;
-                width: 100%;
+            .iska2-grid-item {
+                flex: 0 0 calc(100% - 20px); /* One item per row */
             }
 
-            td {
-                margin-bottom: 10px;
-            }
-
-            .iska2-table-item img {
+            .iska2-grid-item img {
                 width: 80px;
                 height: 80px;
             }
@@ -100,27 +84,18 @@ permalink: /saudi-arabia
         }
     </style>
 
-
-<div id="iska2-table-container">
-    <table>
-        {% assign counter = 0 %}
-        <tr>
-        {% for post in site.categories.united-arab-emirates limit: 4 %}
-            <td>
-                <div class="iska2-table-item">
-                    <a href="{{ post.url }}">
-                        <img src="{{ post.image }}" alt="{{ post.title }}">
-                    </a>
-                    <h5 class="iska2-title">{{ post.title }}</h5>
-                    <a href="{{ post.url }}" class="iska2-description">Read More</a>
-                </div>
-            </td>
-            {% assign counter = counter | plus: 1 %}
-            {% if counter % 2 == 0 %}
-                </tr><tr>
-            {% endif %}
-        {% endfor %}
-        </tr>
-    </table>
+<div id="iska2-grid-container">
+    {% for post in site.categories.united-arab-emirates limit: 4 %}
+    <div class="iska2-grid-item">
+        <a href="{{ post.url }}">
+            <img src="{{ post.image }}" alt="{{ post.title }}">
+        </a>
+        <h5 class="iska2-title">{{ post.title }}</h5>
+        <a href="{{ post.url }}" class="iska2-description">Read More</a>
+    </div>
+    {% endfor %}
 </div>
 
+
+
+    
