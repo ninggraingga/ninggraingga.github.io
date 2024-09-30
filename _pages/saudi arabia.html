@@ -12,17 +12,102 @@ permalink: /saudi-arabia
     
     
 
+
+    <style>
+        /* Container for the grid */
+        #iska2-grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto;
+            gap: 20px;
+            padding: 10px;
+            background-color: #ff5000;
+            border-radius: 10px;
+        }
+
+        /* Grid item styling */
+        .iska2-grid-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* Full-width item for the first row */
+        .iska2-grid-item-1 {
+            grid-column: span 2; /* This makes it span across both columns */
+        }
+
+        /* Image styling */
+        .iska2-grid-item img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        /* Title styling */
+        .iska2-title {
+            font-size: 1.5em;
+            color: #ff5000;
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Description link */
+        .iska2-description {
+            font-size: 1em;
+            color: #ff5000;
+            text-decoration: none;
+        }
+
+        .iska2-description:hover {
+            color: #ff3000;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 100%) {
+            #iska2-grid-container {
+                grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
+            }
+
+            .iska2-grid-item-1 {
+                grid-column: span 2; /* Full width only in larger screens */
+            }
+        }
+    </style>
+
 <div id="iska2-grid-container">
-    {% for post in site.categories.saudi-arabia limit: 999 %}
+    <!-- First Row (1 Full-width Column) -->
+    <div class="iska2-grid-item iska2-grid-item-1">
+        <a href="{{ post.url }}">
+            <img src="{{ post.image }}" alt="{{ post.title }}">
+        </a>
+        <h5 class="iska2-title">{{ post.title }}</h5>
+        <a href="{{ post.url }}" class="iska2-description">Read More</a>
+    </div>
+
+    <!-- Second Row (2 Columns) -->
     <div class="iska2-grid-item">
         <a href="{{ post.url }}">
             <img src="{{ post.image }}" alt="{{ post.title }}">
         </a>
-     <a href="{{ post.url }}" class="iska2-title">   <h5>{{ post.title }}</h5>
-    </a>
+        <h5 class="iska2-title">{{ post.title }}</h5>
+        <a href="{{ post.url }}" class="iska2-description">Read More</a>
     </div>
-    {% endfor %}
+    <div class="iska2-grid-item">
+        <a href="{{ post.url }}">
+            <img src="{{ post.image }}" alt="{{ post.title }}">
+        </a>
+        <h5 class="iska2-title">{{ post.title }}</h5>
+        <a href="{{ post.url }}" class="iska2-description">Read More</a>
+    </div>
 </div>
+
 
 
 
