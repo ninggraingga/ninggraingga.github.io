@@ -27,6 +27,13 @@ authors:
     email: wowthemesnet@gmail.com
     web: /aboutme2
     description: "Every word we write is a small step toward immortality leaving behind a lasting imprint that transcends the limitations of time."
+  admin3:
+    name: rais fazriansyah
+    display_name: rais fazriansyah   
+    gravatar: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQzgvewbmJ9t-MZdbl_LimOMVaWtTNW3_HhpZemtdxC7K34ey46PDnN8HjH2pHK2j4obd7e-pqZtLEZ1pmr796xh-P9kX00gNrc9_RStwlUa9v9XJQzTC2iw1pjpl6rkh9R8YmP6JElswOEbiC82ea2wtrVXPviUFCxLRorLKQ7VrNE4cvvKX3Ogrz3jM/s1600/20241001_073006.jpg
+    email: r.fazriansyah@gmail.com
+    web: /aboutme3
+    description: "The power of the pen is not just in the act of expression but in its ability to ignite change stir emotions and inspire minds."
 # Plugins
 plugins:
   - jekyll-paginate
