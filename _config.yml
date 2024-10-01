@@ -34,6 +34,13 @@ authors:
     email: r.fazriansyah@gmail.com
     web: /aboutme3
     description: "The power of the pen is not just in the act of expression but in its ability to ignite change stir emotions and inspire minds."
+  admin4:
+    name: Ghea Melinda
+    display_name: Ghea Melinda   
+    gravatar: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjuFpsLztF25khx0Y5areM6r7m0Z-My65sjZB4aD1gJYLfQFPR9YsWwP_Bl8yLnRR0R6TXWPI6_rWhhXygx5FfteQdomj7RGUe4P1uo9UeazJWmS27eZMfU_sOW180Suwfnu3dwxTllLw1hA3a3hH9YmHbyo7anykR41FjcjWGVRa5mxpLEWjl5o-cqaKs/s1600/20241001_121304.jpg
+    email: gheamelinda26@gmail.com
+    web: /aboutme4
+    description: "Writing opens windows to the depths of the soul, revealing layers of truth and emotion that often go unnoticed in everyday life."
 # Plugins
 plugins:
   - jekyll-paginate
