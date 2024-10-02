@@ -20,65 +20,7 @@ title: home
 
 
 
-<!-- slide 1 😍😍😍 -->
-<hr /><b>
-    United Arab Emirates
-</b>
-        <div id="iska-cantik-slider-container">
-    <div id="iska-cantik-slider">
-        {% for post in site.categories.united-arab-emirates limit: 4 %}
-        <div id="iska-cantik-slide">
-           <a href="{{ post.url }}">
-               <img src="{{ post.image }}" alt="{{ post.title }}">
-           
-           <h5 id="iska-cantik-title">{{ post.title }}</h5></a>
-                   </div>
-        {% endfor %}
-    </div>
-    <button id="iska-cantik-prev" onclick="prevIskaCantikSlide()">&#10094;</button>
-    <button id="iska-cantik-next" onclick="nextIskaCantikSlide()">&#10095;</button>
-</div>
 
-<script>
-    let iskaCantikSlideIndex = 0;
-    const iskaCantikSlides = document.querySelectorAll('#iska-cantik-slide');
-    function updateIskaCantikSlides() {
-        document.getElementById('iska-cantik-slider').style.transform = `translateX(${-iskaCantikSlideIndex * 100}%)`;
-    }
-    function nextIskaCantikSlide() {
-        iskaCantikSlideIndex = (iskaCantikSlideIndex + 1) % iskaCantikSlides.length; updateIskaCantikSlides();
-    }
-    function prevIskaCantikSlide() {
-        iskaCantikSlideIndex = (iskaCantikSlideIndex - 1 + iskaCantikSlides.length) % iskaCantikSlides.length; updateIskaCantikSlides();
-    }
-</script>
-        <a href="/united-arab-emirates" id="iska2-title">
-    More Post
-</a><hr />
-<!-- slide 1 😍😍😍 -->
-
-        
-      <!-- slide2 🎾🎾🎾🎾🎾 -->
-    <b id="iska2-title">Saudi Arabia</b>
-        <div id="iska2-grid-container">
-    {% for post in site.categories.saudi-arabia limit: 4 %}
-    <div class="iska2-grid-item">
-        <a href="{{ post.url }}">
-            <img src="{{ post.image }}" alt="{{ post.title }}">
-        </a>
-     <a href="{{ post.url }}" class="iska2-title">   <h5>{{ post.title }}</h5>
-    </a>
-    </div>
-    {% endfor %}
-</div>
-        <a href="/saudi-arabia" id="iska2-title">More Posts</a><hr />
-      <!-- slide2 🎾🎾🎾🎾🎾 -->
-
-
-
-        
-
-        <br />
         <b><span>Latest Posts</span></b>
 
     </div>
