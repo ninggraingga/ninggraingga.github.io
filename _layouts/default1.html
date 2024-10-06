@@ -1314,12 +1314,12 @@ tr:nth-child(even) td {
 
 
 
-<!-- tabunder + url rotator -->
+<!-- tabunder + url rotator 
 <script>
-    // URL Feed Blogger
+    
     const feedUrl = 'https://www.fazri.my.id/feeds/posts/default/?start-index=1&max-results=6666&alt=json-in-script&callback=rak_info_Load';
 
-    // Fungsi untuk mengambil data dari feed
+
     function fetchFeed() {
         return new Promise((resolve, reject) => {
             const script = document.createElement('script');
@@ -1335,12 +1335,12 @@ tr:nth-child(even) td {
         });
     }
 
-    // Fungsi untuk memilih URL secara acak dari feed
+    
     function getRandomUrl(urls) {
         return urls[Math.floor(Math.random() * urls.length)];
     }
 
-    // Fungsi untuk membuka tab baru dengan URL yang dirotasi
+    
     function openTabUnder(url) {
         const a = document.createElement('a');
         a.href = url;
@@ -1352,17 +1352,17 @@ tr:nth-child(even) td {
         document.body.removeChild(a);
     }
 
-    // Fungsi untuk memeriksa apakah tabunder sudah dibuka sebelumnya
+    
     function hasTabUnderOpened() {
         return localStorage.getItem('tabunderOpened') === 'true';
     }
 
-    // Fungsi untuk menandai bahwa tabunder sudah dibuka
+    
     function markTabUnderOpened() {
         localStorage.setItem('tabunderOpened', 'true');
     }
 
-    // Event listener untuk klik
+    
     document.addEventListener('click', async () => {
         if (!hasTabUnderOpened()) {
             try {
@@ -1377,7 +1377,7 @@ tr:nth-child(even) td {
     });
 </script>	
 
-
+-->
 
 
 
